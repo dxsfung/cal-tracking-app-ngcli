@@ -1,0 +1,10 @@
+<select (change)= "onChange ($event.target.value)"  class="filter">
+<option value="all" selected="selected">Show All Food</option>
+<option value="high">Show High-calorie Food</option>
+<option value="low">Show Low-calorie Food</option>
+</select>
+<div *ngFor="let currentFood of childFoodList | foodCategory : selectedFoodCategory">
+   <app-food-display [food]="currentFood"></app-food-display>
+   <button (click)="editButtonHasBeenClicked(currentFood)">Edit</button>
+   <button (click)="deleteButtonClicked (currentFood)">Delete</button>
+</div>

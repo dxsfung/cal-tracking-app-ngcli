@@ -1,3 +1,11 @@
-<h1>
-  {{title}}
-</h1>
+<app-nav-tag></app-nav-tag>
+<div class="container">
+    <h2>UsingNg on Calorie-Tracking-App</h2>
+
+    <app-food-list [childFoodList]="masterFoodList" (clickSender)="showDetails($event)" (deleteSender)="deleteDetails($event)"></app-food-list>
+
+    <app-edit-food [childSelectedFood]="selectedFood" (doneClickedSender)="finishedEditing()"></app-edit-food>
+
+    <app-new-food (newFoodSender)="addFood($event)"></app-new-food>
+
+</div>
